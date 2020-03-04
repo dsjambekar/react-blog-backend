@@ -21,9 +21,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/posts', post);
 
-
-let port = 1234;
+var port = process.env.PORT || 1234;
+//let port = 1234;
 
 app.listen(port, () => {
-	console.log('Server is up and running on port numner ' + port);
+	console.log('Our app is running on http://localhost:' + port);
+	//console.log('Server is up and running on port numner ' + port);
 });
