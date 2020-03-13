@@ -5,6 +5,13 @@ exports.test = function (req, res) {
 	res.send('Greetings from the Test controller!');
 };
 
+exports.all_posts = function (req, res) {
+	Post.find(function (err, posts) {
+		if (err) return next(err);
+		res.send(posts);
+	})
+};
+
 exports.post_create = function (req, res) {
 	let post = new Post(
 		{
